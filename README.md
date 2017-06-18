@@ -71,9 +71,24 @@ vscode-powershell
 winscp
 wireshark
 windowsrepair
-googledrive gae.sdk gcloudsdk google-hangouts-chrome gsutil keepass-plugin-keeanywhere kubernetes-cli cmdow
- windowsazurepowershell visualstudio2017-workload-azure windowsazurelibsfornet aztoolkit technicians-toolbox awstools.powershell sql-server-management-studio vnc-viewer
- glaryutilities-free
+googledrive
+gae.sdk
+gcloudsdk
+google-hangouts-chrome
+gsutil
+keepass-plugin-keeanywhere
+kubernetes-cli
+cmdow
+windowsazurepowershell 
+visualstudio2017-workload-azure
+windowsazurelibsfornet
+aztoolkit
+technicians-toolbox
+awstools.powershell
+sql-server-management-studio
+vnc-viewer
+glaryutilities-free
+netdrive
 ## Clasic Shell
 ## CMDer
 ## CMDoW
@@ -87,6 +102,11 @@ googledrive gae.sdk gcloudsdk google-hangouts-chrome gsutil keepass-plugin-keean
 ## Winscp
 ## CyberDuck
 ## NetDrive
+## Dokan
+### WinSshFS
+### CloudFS
+## WinFSP
+### SSHFS-Win
 
 # Connect to *X
 ## X window on Windows (X server)
@@ -96,13 +116,10 @@ googledrive gae.sdk gcloudsdk google-hangouts-chrome gsutil keepass-plugin-keean
 
 ## *X on Windows: Cygwin, MinGW, Msys2, WSL)
 Micorsoft POSIX subsystem (Windows NT and 2000),  Microsoft Services for UNIX (SFU) (since Windows XP and 2003), AT&T Uwin, OpenNT/InteriX (acquired by Microsoft in 1999) and MKS Toolkit (MS-DOS, OS/2, Windows NT/95 and up) (was used by Micosoft for SFU before they acquired Interix). PTC MKS toolkit is still avaivalbel, maintained and commercially supported. RedHat doesn't give commercial support for CygWin.
-
-
-
-
 ## CygWin
-## MinGW
 ## Msys2
+## WSL
+
 
 # Installing **Windows Subsytems for Linux** __(WSL, Windows bash.exe, Ubuntu for windows)__
 # tricks
