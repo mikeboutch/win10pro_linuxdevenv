@@ -5,17 +5,15 @@ This is a howto for configuring the almost perfect developpemnt environnment. It
 ## Chocolatey
 ## My list of Choco packages
 7zip
-adafruit-pi-finder
 adobereader
-awscli                
-beyondcompare              
+awscli
+beyondcompare
 cccp
-ccleaner
 chocolateygui
 classic-shell
 clojure
-cmake                     
-cmder        
+cmake
+cmder
 cyberduck
 Cygwin
 fiddler4
@@ -54,7 +52,7 @@ qemu-img
 rapidee
 ruby
 rufus
-server-jre8
+server-jre
 skype
 strawberryperl
 studio3t
@@ -72,11 +70,20 @@ vscode-markdownlint
 vscode-powershell
 winscp
 wireshark
-googledrive gae.sdk gcloudsdk google-hangouts-chrome gsutil keepass-plugin-keeanywhere kubernetes-cli
+windowsrepair
+googledrive gae.sdk gcloudsdk google-hangouts-chrome gsutil keepass-plugin-keeanywhere kubernetes-cli cmdow
+ windowsazurepowershell visualstudio2017-workload-azure windowsazurelibsfornet aztoolkit technicians-toolbox awstools.powershell sql-server-management-studio vnc-viewer
+ glaryutilities-free
 ## Clasic Shell
-## Cygwin
+## CMDer
+## CMDoW
 ## RapidEE
-##
+## SysInternals
+## Velocity
 
-## *x on Windows: Cygwin, MinGW, Msys2, WSL
+# Must have tools not in Choco
+
+
+# *x on Windows: Cygwin, MinGW, Msys2, WSL
+
 # Installing **Windows Subsytems for Linux** __(WSL, Windows bash.exe, Ubuntu for windows)__
