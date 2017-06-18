@@ -1,11 +1,22 @@
 # win10pro_linuxdevenv
+
 This is a howto for configuring the almost perfect developpemnt environnment. It this howto we will integrate :Windows 10 pro, Docker for Windows, WSL, CygWin64, Msys2, X window server, Hyper V, vagrant , Chocolatey, CMDer... I created this because each times that I come on a new Windows machine, I past at least one week only to setup my environnment.
 
 # Chocolatey
+
+## install Choco
+```cmd
+@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+```
+
 ## My list of Choco packages
+
+`cinst -y 
 7zip
 adobereader
 awscli
+awstools.powershell
+aztoolkit
 beyondcompare
 cccp
 chocolateygui
@@ -13,15 +24,23 @@ classic-shell
 clojure
 cmake
 cmder
+cmdow
 cyberduck
 Cygwin
+dokanany
 fiddler4
 flashplayerplugin
+gae.sdk
+gcloudsdk
 git
+glaryutilities-free
+google-hangouts-chrome
 GoogleChrome
+googledrive
 gradle
 grails
 groovy
+gsutil
 heroku-cli
 hg
 InputDirector
@@ -32,14 +51,17 @@ jetbrainstoolbox
 keepass
 keepass-keepasshttp
 keepass-plugin-keeagent
+keepass-plugin-keeanywhere
 keepass-plugin-rdp
+kubernetes-cli
 lockhunter
 maven
 msys2
 mysql.workbench
+netdrive
 nmap
-nodejs.install 
-notepadplusplus.install 
+nodejs.install
+notepadplusplus.install
 openssh
 P4Merge
 packer
@@ -53,47 +75,40 @@ ruby
 rufus
 server-jre
 skype
+sql-server-management-studio
 strawberryperl
 studio3t
 sysinternals
 tailblazer
+technicians-toolbox
 terraform
 vagrant
 vcxsrv
 velocity
+visualstudio2017-workload-azure
 visualstudiocode
+vnc-viewer
 vscode-csharp
 vscode-csharpextensions
 vscode-docker
 vscode-markdownlint
 vscode-powershell
+windowsazurelibsfornet
+windowsazurepowershell
+windowsrepair
+winfsp
 winscp
 wireshark
-windowsrepair
-googledrive
-gae.sdk
-gcloudsdk
-google-hangouts-chrome
-gsutil
-keepass-plugin-keeanywhere
-kubernetes-cli
-cmdow
-windowsazurepowershell 
-visualstudio2017-workload-azure
-windowsazurelibsfornet
-aztoolkit
-technicians-toolbox
-awstools.powershell
-sql-server-management-studio
-vnc-viewer
-glaryutilities-free
-netdrive
-dokanany
-winfsp
+`
+
 # Must have tools
+
 ## Clasic Shell
+
 ## CMDer
+
 ## CMDoW
+
 ## RapidEE
 ## SysInternals
 ## Velocity
