@@ -5,13 +5,17 @@ This is a howto for configuring the almost perfect developpemnt environnment. It
 # Chocolatey
 
 ## install Choco
-```cmd
+
+Run this in a adminsitrator CMD.exe:
+```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
 
 ## My list of Choco packages
 
-`cinst -y 
+Here a chocolatey install command to install a full buunch ot tools:
+
+`cinst -y
 7zip
 adobereader
 awscli
