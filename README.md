@@ -89,6 +89,8 @@ sql-server-management-studio
 vnc-viewer
 glaryutilities-free
 netdrive
+dokanany
+winfsp
 ## Clasic Shell
 ## CMDer
 ## CMDoW
@@ -106,7 +108,9 @@ netdrive
 ### WinSshFS
 ### CloudFS
 ## WinFSP
-### SSHFS-Win
+### sshFS-Win
+### nfsFS-Win
+
 
 # Connect to *X
 ## X window on Windows (X server)
