@@ -225,7 +225,7 @@ curl http://cygwin.com/setup-x86_64.exe > C:\tools\cygwin\setup-x86_64.exe
 
 ### VNC viewer
 
-## Accessing files 
+## Accessing files
 
 ### Winscp
 
@@ -304,12 +304,15 @@ cygcheck -V
 
 upgrade
 
+From cmd.exe:
+
 ```cmd
-cd C:\tools\cygwin
 curl http://cygwin.com/setup-x86_64.exe > C:\tools\cygwin\setup-x86_64.exe
-REM setup-x86_64.exe --root C:\tools\cygwin -q --upgrade-also
 c:\tools\cygwin\setup-x86_64.exe -q -R C:\tools\cygwin -g
 ```
+
+From bash:
+
 
 ```bash
 curl http://cygwin.com/setup-x86_64.exe > /setup-x86_64.exe
@@ -329,13 +332,11 @@ sage update
 List package categorie
 
 ```bash
-sage update
+sage update # to create setup.ini and setup.sh
 readonly arch=$(uname -m | sed s.i6.x.)
-# from priv_setwd()
-  . /etc/setup/setup.sh
-  mkdir -p "$lastcache"/"$elastmirror"/"$arch"
-  pushd "$lastcache"/"$elastmirror"/"$arch"
-# end of from
+. /etc/setup/setup.sh
+mkdir -p "$lastcache"/"$elastmirror"/"$arch"
+pushd "$lastcache"/"$elastmirror"/"$arch"
 grep ^category: setup.ini |awk '{ for (i = 2; i <= NF; i++) print $i }'|sort|uniq
 popd
 ```
