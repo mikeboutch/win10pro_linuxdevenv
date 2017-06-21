@@ -126,15 +126,15 @@ Update, reboot, update ... reboot
 
 Enable WSl Windows feature. And a couple reboot after you a Linux your Windows (without a VM). Before the first run, update Ubuntu:
 
-```
-C:\Users\Michel 
-λ LxRun.exe  /uninstall /full /y
+```cmd
+C:\> LxRun.exe  /uninstall /full /y
 This will uninstall Ubuntu on Windows.
 This will remove the Ubuntu environment as well as any modifications, new applications, and user data.
 Uninstalling...
 
-C:\Users\Michel 
-λ LxRun.exe  /install /y
+```
+```cmd
+C:\>  LxRun.exe  /install /y
 -- Beta feature --
 This will install Ubuntu on Windows, distributed by Canonical
 and licensed under its terms available here:
@@ -143,12 +143,12 @@ https://aka.ms/uowterms
 Downloading from the Windows Store... 100%
 Extracting filesystem, this will take a few minutes...
 Installation successful!
+```
 
-C:\Users\Michel 
-λ REM the following is required only if didn't ask to set the default user. Or if you want to change the default user name.
+ The following is required only if didn't ask to set the default user. Or if you want to change the default user name.
 
-C:\Users\Michel 
-λ LxRun.exe /setdefaultuser
+```cmd
+C:\> LxRun.exe /setdefaultuser
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
 Enter new UNIX username: mikeb
@@ -156,16 +156,21 @@ Enter new UNIX password:
 Retype new UNIX password:
 passwd: password updated successfully
 Default UNIX user set to: mikeb
+```
 
-C:\Users\Michel 
-λ %windir%\system32\bash.exe -c "lsb_release -a 2>&1|grep -v 'No LSB'"
+Now we can verify the version of Ubuntu on Windows.
+
+```cmd
+C:\> %windir%\system32\bash.exe -c "lsb_release -a 2>&1|grep -v 'No LSB'"
 Distributor ID: Ubuntu
 Description:    Ubuntu 16.04.2 LTS
 Release:        16.04
 Codename:       xenial
 ```
 
-You are ready to go. Run bash :`%windir%\system32\bash.exe ~` or
+You can also upgrade directly in the Ubuntu prompt: `sudo do-release-upgrade`
+
+You are now ready to go. Run bash :`%windir%\system32\bash.exe ~` or
 
 ```
 To run a command as administrator (user "root"), use "sudo <command>".
@@ -183,7 +188,7 @@ mikeb@boutchAtouch:~$
 ### Install Windows Insider Preview
 `sfc /scannow` `wsreset.exe`
 
-You can also upgrade directly in the Ubuntu prompt: `sudo do-release-upgrade`
+
 
 ## Connect to a *X GUI : X window on Windows (X server)
 
