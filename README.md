@@ -7,7 +7,7 @@ This is a howto for configuring the almost perfect development environment. It t
 ### install Chococolatey
 
 Run this in a administrator CMD.exe:
-```
+```cmd
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
 
@@ -185,10 +185,10 @@ root@boutchAtouch:~# ln -sv /mnt/* /
 root@boutchAtouch:~# exit
 mikeb@boutchAtouch:~$
 ```
+
 ### Install Windows Insider Preview
-`sfc /scannow` `wsreset.exe`
 
-
+`sfc /scannow` `wsreset.exe` I had run the Windows Update trouble shooter, which claimed to have fixed problems, and also manually deleted the C:\$WINDOWS.~BT folder, and all folders and files in C:\WINDOWS\SoftwareDistribution\Download. I have now deferred updates. Windows repair..., Version 1703 (OS Build 15063.413)
 
 ## Connect to a *X GUI : X window on Windows (X server)
 
@@ -196,16 +196,30 @@ mikeb@boutchAtouch:~$
 
 ### CygWIN
 
-install Xserver
+Install Xserver from a administrator CMD:
 
 ```cmd
 curl http://cygwin.com/setup-x86_64.exe > C:\tools\cygwin\setup-x86_64.exe
  c:\tools\cygwin\setup-x86_64.exe -q -R C:\tools\cygwin -c  GNOME Gnome KDE LXDE MATE X11 Xfce
 ```
 
+Fix `startxwin` so it would work with WSL since he will connect in TCP not in UDP.
+```bash
+sed -i.bak 's/^serverargs=""/serverargs=" -- -listen tcp "/1; s/enable_xauth=1/enable_xauth=0/1' `which startxwin`
+```
+The previous command also disable Xauth. For Xauth support, you should copy `~/.Xauthority` from your Cygwin's home dir to your WSL's home dir and leave `enable_xauth` to 1 in startxwin.
+You can do the same thing for `startx`. 'startx' start the Xserver in single Windows window. [ See Cygwin/X documentation](https://x.cygwin.com/docs/ug/using.html)
+
+Start the the Xserver, from CygWIN bash:
+```bash
+startxwin &
+```
+
 ### VcXsrv
+The best OSS Xserver Windows Native (compiled with Visual C++), if you don't whant to install Cygwin
 
 ### MobaXterm
+I have to mention it. Because it's a nice product but the free edition is limiting session.
 
 ## Must have tools
 
@@ -261,7 +275,7 @@ curl http://cygwin.com/setup-x86_64.exe > C:\tools\cygwin\setup-x86_64.exe
 
 ### Windows
 
-show version 
+show version:
 
 ```cmd
 ver
@@ -270,7 +284,7 @@ winver
 
 #### WSL
 
-show version 
+show version:
 
 ```bash
 uname -a
@@ -282,6 +296,7 @@ lsb_releases -a
 show version 
 
 ```bash
+uname -a
 cygcheck -V
 gcc -v 2>&1 |grep "gcc "
 ```
@@ -313,20 +328,23 @@ c:\tools\cygwin\setup-x86_64.exe -q -R C:\tools\cygwin -g
 
 From bash:
 
-
 ```bash
 curl http://cygwin.com/setup-x86_64.exe > /setup-x86_64.exe
 cygstart --action=runas /setup-x86_64.exe -q -R 'C:\tools\cygwin' -g
 ```
 
-Install package management system. Sage is dirivate of apt-cyg, written in bash. I have to try cyg-apt which seem more powerfull and written in Python. Sage seem to be the most recent
+Install package management system. Sage is dirivate of apt-cyg, written in bash. I have to try cyg-apt which seem more powerfull and written in Python. Sage seem to be the most recent and also his code is really simple.
 
 ```bash
 mkdir -p /tmp/sage
 cd /tmp/sage
 curl  https://codeload.github.com/svnpenn/sage/zip/master > sage-master.zip
+unzip  sage-master.zip
 cd sage-master/
+./install.sh
 sage update
+cd
+rm -rf /tmp/sage
 ```
 
 List package categorie
@@ -335,10 +353,7 @@ List package categorie
 sage update # to create setup.ini and setup.sh
 readonly arch=$(uname -m | sed s.i6.x.)
 . /etc/setup/setup.sh
-mkdir -p "$lastcache"/"$elastmirror"/"$arch"
-pushd "$lastcache"/"$elastmirror"/"$arch"
-grep ^category: setup.ini |awk '{ for (i = 2; i <= NF; i++) print $i }'|sort|uniq
-popd
+grep ^category: "$lastcache"/"$elastmirror"/"$arch"/setup.ini |awk '{ for (i = 2; i <= NF; i++) print $i }'|sort|uniq
 ```
 
 
