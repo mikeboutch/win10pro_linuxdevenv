@@ -172,7 +172,7 @@ You can also upgrade directly in the Ubuntu prompt: `sudo do-release-upgrade`
 
 You are now ready to go. Run bash :`%windir%\system32\bash.exe ~` or
 
-```
+```console
 To run a command as administrator (user "root"), use "sudo <command>".
 See "man sudo_root" for details.
 
@@ -337,13 +337,13 @@ Install package management system. Sage is dirivate of apt-cyg, written in bash.
 
 ```bash
 mkdir -p /tmp/sage
-cd /tmp/sage
+pushd /tmp/sage
 curl  https://codeload.github.com/svnpenn/sage/zip/master > sage-master.zip
 unzip  sage-master.zip
 cd sage-master/
 ./install.sh
 sage update
-cd
+popd
 rm -rf /tmp/sage
 ```
 
