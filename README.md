@@ -160,7 +160,7 @@ Default UNIX user set to: mikeb
 
 Now we can verify the version of Ubuntu on Windows.
 
-```cmd
+```doscon
 C:\> %windir%\system32\bash.exe -c "lsb_release -a 2>&1|grep -v 'No LSB'"
 Distributor ID: Ubuntu
 Description:    Ubuntu 16.04.2 LTS
