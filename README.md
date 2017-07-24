@@ -126,14 +126,14 @@ Update, reboot, update ... reboot
 
 Enable WSl Windows feature. And a couple reboot after you a Linux your Windows (without a VM). Before the first run, update Ubuntu:
 
-```cmd
+```doscon
 C:\> LxRun.exe  /uninstall /full /y
 This will uninstall Ubuntu on Windows.
 This will remove the Ubuntu environment as well as any modifications, new applications, and user data.
 Uninstalling...
-
 ```
-```cmd
+
+```doscon
 C:\>  LxRun.exe  /install /y
 -- Beta feature --
 This will install Ubuntu on Windows, distributed by Canonical
@@ -147,7 +147,7 @@ Installation successful!
 
  The following is required only if didn't ask to set the default user. Or if you want to change the default user name.
 
-```cmd
+```doscon
 C:\> LxRun.exe /setdefaultuser
 Please create a default UNIX user account. The username does not need to match your Windows username.
 For more information visit: https://aka.ms/wslusers
